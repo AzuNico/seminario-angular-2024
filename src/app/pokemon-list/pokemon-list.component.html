@@ -1,3 +1,4 @@
+<h2>Pokemons</h2>
 <table class="table">
     <thead>
         <tr>
@@ -8,17 +9,24 @@
             <th>Altura</th>
             <th>Peso</th>
             <th>Acción</th>
+            <th>Pokemón Dice</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let pokemon of pokemonList">
-            <td><img src="{{pokemon.image}}" alt="{{pokemon.name}}"></td>
+            <td><img [src]="pokemon.image" [alt]="pokemon.name"></td>
             <td>{{pokemon.id}}</td>
             <td>{{pokemon.name}}</td>
             <td>{{pokemon.type}}</td>
             <td>{{pokemon.height}}</td>
             <td>{{pokemon.weight}}</td>
-            <td></td>
+            <td>
+                <div style="display:flex; flex-direction: column; width: 70px;">
+                    <button class="btn btn-primary btn-sm mb-2" (click)="onGreeting(pokemon)">saludar</button>
+                    <button class="btn btn-danger btn-sm" (click)="onCatch(pokemon)">atrapar</button>
+                </div>
+            </td>
+            <td>{{pokemon.greeting}}</td>
         </tr>
     </tbody>
 </table>

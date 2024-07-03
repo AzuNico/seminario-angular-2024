@@ -5,4 +5,5 @@ export interface Pokemon {
   type: string;
   height: number;
   weight: number;
+  greeting: string;
 }

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'PokeFinder';
+  title = 'PokeApp';
   year = 2024;
 }
