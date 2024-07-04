@@ -19,6 +19,26 @@ export class PokemonListComponent {
       weight: 3,
       greeting: '',
     },
+    {
+      id: 4,
+      height: 10,
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
+      name: 'Charmander',
+      type: 'fuego',
+      weight: 3,
+      greeting: '',
+    },
+    {
+      id: 7,
+      height: 10,
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
+      name: 'Squirtle',
+      type: 'agua',
+      weight: 3,
+      greeting: '',
+    },
   ];
 
   constructor(private _poket: PokemonPoketService) {}

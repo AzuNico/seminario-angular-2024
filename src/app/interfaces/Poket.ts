@@ -1,7 +1,7 @@
-import { Item } from './Item';
+import { Slot } from './Slot';
 
 export interface Poket {
   id: number;
   capacity: number;
-  itemList: Item[];
+  slotList: Slot[];
 }

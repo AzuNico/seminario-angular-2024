@@ -8,7 +8,13 @@
     <div [id]="'collapse' + id" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading' + id"
         data-bs-parent="#accordionExample">
         <div class="accordion-body">
-            <p>poket works!</p>
+
+            <div class="card p-3">
+                <div class="poket-container">
+                    <div *ngFor="let slot of slotList" class="slot"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

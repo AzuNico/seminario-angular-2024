@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Poket } from '../interfaces/Poket';
 import { Item } from '../interfaces/Item';
+import { Slot } from '../interfaces/Slot';
 
 @Component({
   selector: 'poket',
@@ -11,35 +12,38 @@ export class PoketComponent implements Poket {
   @Input()
   capacity: number = 0;
   @Input()
-  itemList: Item[] = [];
+  slotList: Slot[] = [];
   @Input()
   id: number = 0;
 
-  constructor() {}
+
+  constructor() {
+    
+  }
 
   addItem(newItem: Item) {
-    const isFull = this.itemList.length >= this.capacity;
+    // const isFull = this.slotList.length >= this.capacity;
 
-    if (isFull) {
-      return;
-    }
+    // if (isFull) {
+    //   return;
+    // }
 
-    const item = this.itemList.find((i) => i.id === newItem.id);
+    // const item = this.slotList.find((i) => i.id === newItem.id);
 
-    if (!item) {
-      this.itemList.push({
-        ...newItem,
-      });
-    } else {
-      item.quantity += newItem.quantity;
-    }
+    // if (!item) {
+    //   this.slotList.push({
+    //     ...newItem,
+    //   });
+    // } else {
+    //   item.quantity += newItem.quantity;
+    // }
   }
 
   removeItem(item: Item) {
     if (item.quantity > 1) {
       item.quantity--;
     } else {
-      this.itemList = this.itemList.filter((i) => i.id !== item.id);
+      this.slotList = this.slotList.filter((i) => i.id !== item.id);
     }
   }
 }
