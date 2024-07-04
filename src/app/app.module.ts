@@ -11,7 +11,14 @@ import { PoketComponent } from './poket/poket.component';
 import { PokemonPoketSlotComponent } from './pokemon-poket-slot/pokemon-poket-slot.component';
 
 @NgModule({
-  declarations: [AppComponent, PokemonListComponent, PokemonPoketComponent, BagComponent, PoketComponent, PokemonPoketSlotComponent],
+  declarations: [
+    AppComponent,
+    PokemonListComponent,
+    PokemonPoketComponent,
+    BagComponent,
+    PoketComponent,
+    PokemonPoketSlotComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

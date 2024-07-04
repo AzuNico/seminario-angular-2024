@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { PoketService } from '../poket.service';
+import { Component, Input } from '@angular/core';
 import { Poket } from '../interfaces/Poket';
 import { Item } from '../interfaces/Item';
 
@@ -9,13 +8,38 @@ import { Item } from '../interfaces/Item';
   styleUrl: './poket.component.scss',
 })
 export class PoketComponent implements Poket {
+  @Input()
   capacity: number = 0;
+  @Input()
   itemList: Item[] = [];
+  @Input()
+  id: number = 0;
 
-  constructor(private _poketService: PoketService) {
-    this.capacity = this._poketService.capacity;
-    this._poketService.itemList.subscribe((itemList: Item[]) => {
-      this.itemList = itemList;
-    });
+  constructor() {}
+
+  addItem(newItem: Item) {
+    const isFull = this.itemList.length >= this.capacity;
+
+    if (isFull) {
+      return;
+    }
+
+    const item = this.itemList.find((i) => i.id === newItem.id);
+
+    if (!item) {
+      this.itemList.push({
+        ...newItem,
+      });
+    } else {
+      item.quantity += newItem.quantity;
+    }
+  }
+
+  removeItem(item: Item) {
+    if (item.quantity > 1) {
+      item.quantity--;
+    } else {
+      this.itemList = this.itemList.filter((i) => i.id !== item.id);
+    }
   }
 }
