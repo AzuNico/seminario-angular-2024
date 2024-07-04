@@ -1,0 +1,25 @@
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Bolsillo #1
+        </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <div class="container">
+                <h4>Tú Equipo Pokemon</h4>
+                <p>Capacidad {{pokemonList.length}}/{{capacity}}</p>
+                <div *ngIf="pokemonList.length === 0" class="pokemon-card">
+                    <p>No tienes pokemon</p>
+                </div>
+                <ul *ngIf="pokemonList.length != 0" class="container">
+                    <li *ngFor="let pokemon of pokemonList" class="list-group-item pokemon-card">
+                        <pokemon-poket-slot [pokemon]="pokemon"
+                            (releasePokemon)="releasePokemon(pokemon)"></pokemon-poket-slot>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

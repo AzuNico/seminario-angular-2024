@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Pokemon } from '../interfaces/Pokemon';
+import { PokemonPoketService } from '../pokemon-poket.service';
 
 @Component({
   selector: 'poke-list',
@@ -20,6 +21,8 @@ export class PokemonListComponent {
     },
   ];
 
+  constructor(private _poket: PokemonPoketService) {}
+
   /* Saludar */
   onGreeting(pokemon: Pokemon): void {
     pokemon.greeting = `${pokemon.name}!!`;
@@ -28,7 +31,7 @@ export class PokemonListComponent {
     }, 1500);
   }
 
-  onCatch(pokemon: Pokemon): Pokemon {
-    return pokemon;
+  onCatch(pokemon: Pokemon): void {
+    this._poket.cathPokemon(pokemon);
   }
 }
