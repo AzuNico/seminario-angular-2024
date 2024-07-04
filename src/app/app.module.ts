@@ -9,6 +9,7 @@ import { PokemonPoketComponent } from './pokemon-poket/pokemon-poket.component';
 import { BagComponent } from './bag/bag.component';
 import { PoketComponent } from './poket/poket.component';
 import { PokemonPoketSlotComponent } from './pokemon-poket-slot/pokemon-poket-slot.component';
+import { PoketSlotComponent } from './poket-slot/poket-slot.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PokemonPoketSlotComponent } from './pokemon-poket-slot/pokemon-poket-sl
     BagComponent,
     PoketComponent,
     PokemonPoketSlotComponent,
+    PoketSlotComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
