@@ -1,0 +1,22 @@
+<!-- navbar -->
+<ng-content select="[slot='navbar']"></ng-content>
+<!-- navbar -->
+<div class="container">
+    <div class="row">
+
+        <!-- Contenido principal -->
+        <div class="col-8">
+            <ng-content select="[slot='main']"></ng-content>
+        </div>
+        <!-- Contenido principal -->
+
+        <!-- Contenido secundario -->
+        <div class="col-4">
+            <ng-content select="[slot='sidebar']"></ng-content>
+        </div>
+        <!-- Contenido secundario -->
+    </div>
+</div>
+<!-- footer -->
+<ng-content select="[slot='footer']"></ng-content>
+<!-- footer -->
