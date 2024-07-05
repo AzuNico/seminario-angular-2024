@@ -1,5 +1,5 @@
 <h2>Pokemons</h2>
-<table class="table">
+<table class="table align-middle text-center">
     <thead>
         <tr>
             <th>Imagen</th>
@@ -21,7 +21,7 @@
             <td>{{pokemon.height}}</td>
             <td>{{pokemon.weight}}</td>
             <td>
-                <div style="display:flex; flex-direction: column; width: 70px;">
+                <div style="display:flex; flex-direction: column;">
                     <button class="btn btn-primary btn-sm mb-2" (click)="onGreeting(pokemon)">saludar</button>
                     <button class="catch-btn btn btn-danger btn-sm" (click)="onCatch(pokemon)">atrapar</button>
                 </div>

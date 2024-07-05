@@ -1,49 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../interfaces/Pokemon';
 import { PokemonPoketService } from '../pokemon-poket.service';
+import { PokemonDataService } from '../data/pokemon-data-service.service';
+import { mergeMap, toArray } from 'rxjs/operators';
 
 @Component({
   selector: 'pokemon-list',
   templateUrl: './pokemon-list.component.html',
-  styleUrl: './pokemon-list.component.scss',
+  styleUrls: ['./pokemon-list.component.scss'], // Corregido a styleUrls y es un array
 })
-export class PokemonListComponent {
-  pokemonList: Pokemon[] = [
-    {
-      id: 1,
-      height: 10,
-      image:
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-      name: 'Bulbasaur',
-      type: 'planta',
-      weight: 3,
-      greeting: '',
-    },
-    {
-      id: 4,
-      height: 10,
-      image:
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
-      name: 'Charmander',
-      type: 'fuego',
-      weight: 3,
-      greeting: '',
-    },
-    {
-      id: 7,
-      height: 10,
-      image:
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
-      name: 'Squirtle',
-      type: 'agua',
-      weight: 3,
-      greeting: '',
-    },
-  ];
+export class PokemonListComponent implements OnInit {
+  pokemonList: Pokemon[] = []; // Asegurarse de que pokemonList esté definido
 
-  constructor(private _poket: PokemonPoketService) {}
+  constructor(
+    private _poket: PokemonPoketService,
+    private pokemonDataService: PokemonDataService
+  ) {}
 
-  /* Saludar */
+  ngOnInit() {
+    if (this.pokemonList.length > 0) return; 
+    this.pokemonDataService.fetchAllPokemonDetails().subscribe((data) => {
+      this.pokemonList = data; // Asignar los datos recopilados a pokemonList
+    });
+  }
+
   onGreeting(pokemon: Pokemon): void {
     pokemon.greeting = `${pokemon.name}!!`;
     setTimeout(() => {

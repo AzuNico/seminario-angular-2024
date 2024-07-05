@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PokemonScreenComponent } from './pokemon-screen/pokemon-screen.component';
 import { ShopScreenComponent } from './shop-screen/shop-screen.component';
 import { PokemonStorageScreenComponent } from './pokemon-storage-screen/pokemon-storage-screen.component';
+import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { PokemonStorageScreenComponent } from './pokemon-storage-screen/pokemon-
     PokemonStorageScreenComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
