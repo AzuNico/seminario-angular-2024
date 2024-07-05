@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from './interfaces/Pokemon';
 import { BehaviorSubject } from 'rxjs';
+import { PokemonStorageService } from './pokemon-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,19 +12,17 @@ export class PokemonPoketService {
   pokemonList: BehaviorSubject<Pokemon[]> = new BehaviorSubject(
     this._pokemonList
   );
-  
 
-  constructor() {}
+  constructor(private _pokemonStorageService: PokemonStorageService) {}
 
   cathPokemon(pokemon: Pokemon) {
+    const uniqueID = new Date().getTime() + pokemon.id;
+    const uniquePokemon: Pokemon = { ...pokemon, id: uniqueID };
     if (this._pokemonList.length >= this.capacity) {
+      this._pokemonStorageService.storePokemon(uniquePokemon);
       return;
     }
-    this._pokemonList.push({
-      ...pokemon,
-      id:
-        this._pokemonList.length + pokemon.id + Math.floor(Math.random() * 100),
-    });
+    this._pokemonList.push(uniquePokemon);
     this.pokemonList.next(this._pokemonList);
   }
 

@@ -23,17 +23,19 @@ export class PokemonDataService {
   // Función para obtener los detalles de un Pokémon por su URL
   fetchPokemonDetails(url: string): Observable<Pokemon> {
     return this.http.get<Pokemon>(url).pipe(
-      map(
-        (pokemon: any): Pokemon => ({
+      map((pokemon: any): Pokemon => {
+        
+        return {
           name: pokemon.name,
-          id: pokemon.id,
+          id: -1,
           image: pokemon.sprites.front_default,
           type: pokemon?.types[0]?.type.name,
           height: pokemon.height,
           weight: pokemon.weight,
           greeting: '',
-        })
-      )
+          number: pokemon.id,
+        };
+      })
     );
   }
 
