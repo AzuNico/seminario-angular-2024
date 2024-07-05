@@ -10,6 +10,12 @@ import { BagComponent } from './bag/bag.component';
 import { PoketComponent } from './poket/poket.component';
 import { PokemonPoketSlotComponent } from './pokemon-poket-slot/pokemon-poket-slot.component';
 import { PoketSlotComponent } from './poket-slot/poket-slot.component';
+import { LayoutComponent } from './layout/layout.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { PokemonScreenComponent } from './pokemon-screen/pokemon-screen.component';
+import { ShopScreenComponent } from './shop-screen/shop-screen.component';
+import { PokemonStorageScreenComponent } from './pokemon-storage-screen/pokemon-storage-screen.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +26,12 @@ import { PoketSlotComponent } from './poket-slot/poket-slot.component';
     PoketComponent,
     PokemonPoketSlotComponent,
     PoketSlotComponent,
+    LayoutComponent,
+    NavbarComponent,
+    FooterComponent,
+    PokemonScreenComponent,
+    ShopScreenComponent,
+    PokemonStorageScreenComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
