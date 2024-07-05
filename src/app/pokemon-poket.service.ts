@@ -8,6 +8,8 @@ import { PokemonStorageService } from './pokemon-storage.service';
 })
 export class PokemonPoketService {
   private _pokemonList: Pokemon[] = [];
+  private _message: string = '';
+  message: BehaviorSubject<string> = new BehaviorSubject(this._message);
   capacity: number = 6;
   pokemonList: BehaviorSubject<Pokemon[]> = new BehaviorSubject(
     this._pokemonList
@@ -20,6 +22,12 @@ export class PokemonPoketService {
     const uniquePokemon: Pokemon = { ...pokemon, id: uniqueID };
     if (this._pokemonList.length >= this.capacity) {
       this._pokemonStorageService.storePokemon(uniquePokemon);
+      this._message = '  Enviado a guarderia';
+      this.message.next(this._message);
+      setTimeout(() => {
+        this._message = '';
+        this.message.next(this._message);
+      }, 2000);
       return;
     }
     this._pokemonList.push(uniquePokemon);

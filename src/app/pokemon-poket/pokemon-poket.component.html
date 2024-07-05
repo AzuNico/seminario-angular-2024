@@ -9,7 +9,7 @@
         <div class="accordion-body">
             <div class="container">
                 <h4>Tú Equipo Pokemon</h4>
-                <p>Capacidad {{pokemonList.length}}/{{capacity}}</p>
+                <p>Capacidad {{pokemonList.length}}/{{capacity}} <span style="color:green">{{message}}</span></p>
                 <div *ngIf="pokemonList.length === 0" class="pokemon-card">
                     <p>No tienes pokemon</p>
                 </div>
