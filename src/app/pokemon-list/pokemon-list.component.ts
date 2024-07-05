@@ -3,7 +3,7 @@ import { Pokemon } from '../interfaces/Pokemon';
 import { PokemonPoketService } from '../pokemon-poket.service';
 
 @Component({
-  selector: 'poke-list',
+  selector: 'pokemon-list',
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
 })
