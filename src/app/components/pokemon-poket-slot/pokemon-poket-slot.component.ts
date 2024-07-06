@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Pokemon } from '../interfaces/Pokemon';
+import { Pokemon } from '../../interfaces/Pokemon';
 
 @Component({
   selector: 'pokemon-poket-slot',

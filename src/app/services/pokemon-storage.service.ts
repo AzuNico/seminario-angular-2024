@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pokemon } from './interfaces/Pokemon';
+import { Pokemon } from '../interfaces/Pokemon';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

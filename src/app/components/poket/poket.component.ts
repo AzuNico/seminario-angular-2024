@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Poket } from '../interfaces/Poket';
-import { Item } from '../interfaces/Item';
-import { Slot } from '../interfaces/Slot';
+import { Poket } from '../../interfaces/Poket';
+import { Slot } from '../../interfaces/Slot';
+import { Item } from '../../interfaces/Item';
 
 @Component({
   selector: 'poket',
@@ -16,20 +16,14 @@ export class PoketComponent implements Poket {
   @Input()
   id: number = 0;
 
-
-  constructor() {
-    
-  }
+  constructor() {}
 
   addItem(newItem: Item) {
     // const isFull = this.slotList.length >= this.capacity;
-
     // if (isFull) {
     //   return;
     // }
-
     // const item = this.slotList.find((i) => i.id === newItem.id);
-
     // if (!item) {
     //   this.slotList.push({
     //     ...newItem,
