@@ -3,7 +3,7 @@
 
 ## Descripción del proyecto
 
-El proyecto consite en un juego de pokemon hecho en Angular en el cual podes atrapar pokemon de un listado y guardarlos en tú mochila, cuando la mochila esta llena, los pokemon son enviados a la guarderia pokemon.
+El proyecto consiste en un juego de pokemon hecho en Angular en el cual podes atrapar pokemon de un listado y guardarlos en tú mochila, cuando la mochila esta llena, los pokemon son enviados a la guarderia pokemon.
 
 ## Datos del alumno
 
