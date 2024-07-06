@@ -1,4 +1,17 @@
-# SeminarioAngular2024
+# PokeApp - Seminario Angular 2024
+
+
+## Descripción del proyecto
+
+El proyecto consite en un juego de pokemon hecho en Angular en el cual podes atrapar pokemon de un listado y guardarlos en tú mochila, cuando la mochila esta llena, los pokemon son enviados a la guarderia pokemon.
+
+## Datos del alumno
+
+- Nombre y Apellido: Nicolás Azuaga
+- DNI: 34630119
+- Email: azuaganicolas@gmail.com
+- Sede: Tandil
+##
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
 
