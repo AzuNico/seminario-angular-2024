@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Poket } from '../interfaces/Poket';
+import { Poket } from '../../interfaces/Poket';
 
 @Component({
   selector: 'bag',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Pokemon } from '../interfaces/Pokemon';
-import { PokemonStorageService } from '../pokemon-storage.service';
+import { Pokemon } from '../../interfaces/Pokemon';
+import { PokemonStorageService } from '../../services/pokemon-storage.service';
 
 @Component({
   selector: 'app-pokemon-storage-screen',

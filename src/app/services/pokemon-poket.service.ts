@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Pokemon } from './interfaces/Pokemon';
+
 import { BehaviorSubject } from 'rxjs';
 import { PokemonStorageService } from './pokemon-storage.service';
+import { Pokemon } from '../interfaces/Pokemon';
 
 @Injectable({
   providedIn: 'root',
